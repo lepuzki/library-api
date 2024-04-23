@@ -19,8 +19,6 @@ function App() {
       return request1;
     } else if (request2Size > 0 ) {
       return request2;
-    } else {
-      return alert("none found");
     }
   }
 
@@ -32,9 +30,8 @@ function App() {
       const response = determineLargerRequest(response1, response2);
 
       setLibraries(response.data.items);
-      console.log(query);
     } catch (error) {
-      console.error('Error fetching library data:', error);
+      console.error('Error fetching library data: ', error);
     }
   };
 
@@ -52,6 +49,7 @@ function App() {
           <div key={index} className="library">
             <h2>{library.name}</h2>
             <p>{library.city}, , {library.slug}</p>
+            <p>{library.image}</p>
             <img src={library.image} alt={library.name} style={{ width: '100px', height: '100px' }}/>
             <p>{library.city}, {library.part_of_city}</p>
           </div>
@@ -60,5 +58,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;

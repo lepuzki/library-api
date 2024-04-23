@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(45, 45, 45);
 }
 
 .App {
@@ -9,6 +9,8 @@ html {
 }
 .library {
   background-color: rgb(182, 182, 182);
+  outline: solid 1.5px;
+  outline-color: black;
 }
 
 input {
