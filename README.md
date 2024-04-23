@@ -6,11 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 git clone https://github.com/lepuzki/library-api.git
 
-Make sure Node.js and npm are installed.
+Ensure [Node.js](https://nodejs.org/en/download) and npm are installed. 
 
-in the project folder run:
-npm install axios
-npm install react-scripts
+Navigate to the project folder run:
+npm install
 
 ## Available Scripts
 
