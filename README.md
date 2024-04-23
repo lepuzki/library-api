@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installation
+
+git clone https://github.com/lepuzki/library-api.git
+
+Make sure Node.js and npm are installed.
+
+in the project folder run:
+npm install axios
+npm install react-scripts
+
 ## Available Scripts
 
 In the project directory, you can run:
