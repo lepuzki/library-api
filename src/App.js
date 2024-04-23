@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import defaultImage from "./assets/default.png";
+
 
 function App() {
   const [query, setQuery] = useState('');
@@ -8,19 +10,23 @@ function App() {
 
   // function to compare two request sizes
   function determineLargerRequest(request1, request2) {
-    // Convert requests to JSON strings and compare their lengths
+    // convert requests to JSON strings and compare their lengths
     const request1Size = JSON.stringify(request1).length;
     const request2Size = JSON.stringify(request2).length;
 
     console.log(request1Size, request2Size);
-  
-    // Compare sizes and return largest
+
+    // compare sizes and return largest
     if (request1Size > 0) {
       return request1;
-    } else if (request2Size > 0 ) {
+    } else if (request2Size > 0) {
       return request2;
     }
   }
+  const getImage = (library) => {
+    return library.coverPhoto && library.coverPhoto.medium ? library.coverPhoto.medium.url : defaultImage;
+  };
+
 
   const fetchLibraries = async () => {
     try {
@@ -37,6 +43,9 @@ function App() {
 
   return (
     <div className="App">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      </style>
       <input
         type="text"
         placeholder="Enter a library or city name"
@@ -48,10 +57,9 @@ function App() {
         {libraries.map((library, index) => (
           <div key={index} className="library">
             <h2>{library.name}</h2>
-            <p>{library.city}, , {library.slug}</p>
-            <p>{library.image}</p>
-            <img src={library.image} alt={library.name} style={{ width: '100px', height: '100px' }}/>
-            <p>{library.city}, {library.part_of_city}</p>
+            <p>{library.address.city}, {library.address.street}, {library.address.zipcode}</p>
+            <img className='library-image' src={getImage(library)} alt={library.name}></img>
+            <p>{library.part_of_city}</p>
           </div>
         ))}
       </div>
