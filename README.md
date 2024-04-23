@@ -8,7 +8,8 @@ git clone https://github.com/lepuzki/library-api.git
 
 Ensure [Node.js](https://nodejs.org/en/download) and npm are installed. 
 
-Navigate to the project folder run:
+Navigate to the project folder and run:
+
 npm install
 
 ## Available Scripts
